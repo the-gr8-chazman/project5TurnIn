@@ -2,11 +2,8 @@ FROM python:2.7.10
 
 COPY requirements.txt .
 
-
-EXPOSE 5000
-EXPOSE 6379
-ADD . /app
-COPY . /app
-WORKDIR /app
+ADD . /instruct
+COPY . /instruct
+WORKDIR /instruct
 RUN pip install -r requirements.txt 
-ENTRYPOINT ["python", "app.py"]
+ENTRYPOINT ["python", "CLI.py"]
